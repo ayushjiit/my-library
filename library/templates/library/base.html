@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Intern</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/library.css' %}">
+		<style>
+			body {background-color:lightgrey;}
+			h2   {color:blue;}
+			h3   {color:red;}
+			p    {color:green;}
+		</style>
+    </head>
+    <body>
+	
+		{% if user.is_authenticated %}
+			<a href="{% url 'lib_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	
+		{% else %}
+			<a href="" class="top-menu"><u>LOGIN</u></a>
+	
+		{% endif %}
+		
+	
+	
+        <div class="page-header">
+            <h1 align="center"><a href=""><u><b>Welcome to Learning Resource Center</b></u></a></h1>
+        </div>
+		
+		
+		
+		
+		
+			<div class="content container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="try">
+						{% block content %}
+							{% endblock %}
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		    </body>
+</html>

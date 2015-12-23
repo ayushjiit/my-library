@@ -1,0 +1,27 @@
+			
+			
+			{% extends 'library/base.html' %}
+			
+			
+			
+			{% block content %}
+			{%  for post in books %}
+			{% if post.section == '5' %}
+			
+			<div class="content container">
+			<div class="row">
+			<div class="col-md-8">
+			
+			<div class="try">	
+				<h2><a href="">Title :  {{ post.title }}</a></h2>
+				<h3><a href="">Writer : {{ post.writer }}</a></h3>
+				<p>Published on : {{ post.published_date }}</p>
+			</div>
+			
+			</div>
+			</div>
+			</div>
+			{% endif %}
+			
+			{% endfor %}
+			{% endblock %}
